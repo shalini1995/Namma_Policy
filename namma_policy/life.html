@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My_Policy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container" style="background-color: #C0CA33; height:700px;">
+  <h2>Life and Health Insurance</h2>
+  <form action="/action_page.php">
+    <div class="form-group">
+      <label for="name">Name of the Insurer</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" data-toggle="tooltip" title="Name should contain only alphabets">
+    </div>
+    <div class="form-group">
+      <label for="name">Name of the Proposer</label>
+      <input type="text" class="form-control" id="pname" placeholder="Enter proposer name" name="name" data-toggle="tooltip" title="Name should contain only alphabets">
+    </div>
+     <div class="form-group">
+      <label for="dob">D.O.B</label>
+      <input type="date" class="form-control" id="dob" placeholder="Enter Date of Birth" name="dob">
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" class="form-control" id="age" placeholder="Enter age" name="age">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea rows="4" cols="50" class="form-control" id="add" placeholder="Enter present address" name="address"></textarea>
+    </div>
+     <div class="form-group">
+      <label for="aadhar">Aadhar</label>
+      <input type="text" class="form-control" id="aadhar" placeholder="Enter your aadhar number" name="aadhar">
+    </div>
+     <div class="form-group">
+      <label for="pan">PAN</label>
+      <input type="text" class="form-control" id="pan" placeholder="Enter your PAN number" name="pan">
+    </div>
+    <button type="submit" class="btn btn-default" onClick="validate()">Submit</button>
+  </form>
+</div>

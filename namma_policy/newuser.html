@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My_Policy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container" style="background-color: #C0CA33; height:800px;">
+  <h2>New users can register </h2>
+  <form action="/action_page.php">
+  	<div class="form-group">
+      <label for="mobile">Mobile Number:</label>
+      <input type="text" class="form-control" id="mobile" placeholder="Enter mobile number" name="mobile" data-toggle="tooltip" title="Mobile number should contain only numbers">
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" data-toggle="tooltip" title="Name should contain only alphabets">
+    </div>
+    <div class="form-group">
+      <label for="address">Address 1:</label>
+      <textarea rows="4" cols="50" class="form-control" id="addone" placeholder="Enter present address" name="address"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="address">Address 2:</label>
+      <textarea rows="4" cols="50" class="form-control" id="addtwo" placeholder="Enter permanent address" name="address"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" data-toggle="tooltip" title="Password should contain at least one special character and one digit and length should be 6 or above">
+    </div>
+     <div class="form-group">
+      <label for="pwd">Re-enter Password:</label>
+      <input type="password" class="form-control" id="repwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" id="prime" name="remember">Prime User</label>
+    </div>
+   <!--  <button type="submit" class="btn btn-default" onClick="validate()">Submit</button> -->
+  </form>
+ <button onClick="call()">Submit</button>
+ <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Prime</button>
+
+ <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Prime Features</h4>
+      </div>
+      <div class="modal-body">
+        <p>Upto 15% on Insurance. Save on your Savings. Upto 40% on Clothing. Only for prime customers...</p>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-default" data-dismiss="modal">500 Membership</button>
+      	<button type="button" class="btn btn-default" data-dismiss="modal">Pay Now</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+	function call()
+	{
+		/*var re = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{6,})");*/
+		var mobilecheck=/^\d{10}$/;
+		var namecheck=/^[a-zA-Z ]{1,30}$/;
+		var emailcheck=/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+		var pwdcheck=/^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+		var mobile=document.querySelector("#mobile").value;
+		var name=document.querySelector("#name").value;
+		var addone=document.querySelector("#addone").value;
+		var addtwo=document.querySelector("#addtwo").value;
+		var email=document.querySelector("#email").value;
+		var pwd=document.querySelector("#pwd").value;
+		var repwd=document.querySelector("#repwd").value;
+		/*var prime=document.querySelector("#prime").checked;*/
+
+		if((mobile!="")&&(mobile!=null)&&(mobile.match(mobilecheck)))
+		{
+			if((name!="")&&(name!=null)&&(name.match(namecheck)))
+			{
+				if((addone!="")&&(addone!=null))
+				{
+					if((addtwo!="")&&(addtwo!=null))
+					{
+						if((email!="")&&(email!=null)&&(email.match(emailcheck)))
+						{
+							if((pwd!="")&&(pwd!=null)&&(pwd.match(pwdcheck)))
+							{
+								if((repwd!="")&&(repwd!=null)&&(!(repwd.localeCompare(pwd))))
+								{
+									console.log("welcome");
+								}
+								else
+								{
+									alert("The Re-typed password haven't match with your password");
+								}
+							}
+							else
+							{
+								alert("Your password haven't meet the required password strength");
+							}
+						}
+						else
+						{
+							alert("Please provide valid e-mail address");
+						}
+					}
+					else
+					{
+						alert("Please provide your permanent address");
+					}
+
+				}
+				else
+					{
+						alert("Please provide your present address");
+					}
+			}
+			else
+			{
+				alert("Your name should contain only alphabets");
+			}
+		}
+		else
+		{
+			alert("Please provide valid mobile number");
+		}
+	}
+	
+</script>
+
+</body>
+</html>

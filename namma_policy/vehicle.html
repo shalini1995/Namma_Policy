@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My_Policy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container" style="background-color: #C0CA33; height:650px;">
+  <h2>Vehicle Insurance</h2>
+  <form action="/action_page.php">
+    <div class="form-group">
+      <label for="mobile">Name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" data-toggle="tooltip" title="Name should contain only alphabets">
+    </div>
+    <div class="form-group">
+      <label for="email">Vehicle Number</label>
+      <input type="text" class="form-control" id="vnum" placeholder="Enter vehicle number" name="vehicle number">
+    </div>
+     <div class="form-group">
+      <label for="email">Engine Number</label>
+      <input type="text" class="form-control" id="enum" placeholder="Enter engine number" name="engine number">
+    </div>
+      <div class="form-group">
+      <label for="email">Vehicle Model</label>
+      <input type="text" class="form-control" id="vmodel" placeholder="Enter vehicle model" name="vehicle model">
+    </div>
+    <div class="form-group">
+      <label for="email">Year of Manufacturing</label>
+      <input type="date" class="form-control" id="mfg" placeholder="Enter manufacturing date" name="year of manufacturing">
+    </div>
+    <div class="form-group">
+      <label for="mobile">Previous Insurance Details</label>
+      <textarea rows="4" cols="50" class="form-control" id="previns" placeholder="Enter previous insurance details" name="previous insurance"></textarea>
+    </div>
+    <button type="submit" class="btn btn-default" onClick="validate()">Submit</button>
+  </form>
+</div>
